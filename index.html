@@ -25,7 +25,7 @@
 		<label for="name" class="form-label">Nombre archivo exportado:</label>
 		<input required type="text" class="form-control" id="name" placeholder="Introduce nombre de archivo a exportar" name="name">
 	  </div>
-	  <button type="submit" onclick="alert('Button clicked!')" class="btn btn-primary" id="conv_btn">Convertir</button>
+	  <button type="submit" onclick="aTag.click();" class="btn btn-primary" id="conv_btn">Convertir</button>
 	</form>
   </div>
 </div>
@@ -52,21 +52,12 @@
 
 			// download the csv and convert it to a excel file
 			let aTag = await cvrt.Csv2Xlsx.convertCsv(file, new_file, metaData);
-
-			// return value is a <a> element, add it to the DOM to start the download
-			if (aTag) {
-
-				aTag.className = 'downloadLink';
-				document.getElementById("conv_btn").appendChild(aTag);
-
-				// start the download automatically
-				//aTag.click();
-			}
 		};
 
 	</script>
 </body>
 </html>
+
 
 
 

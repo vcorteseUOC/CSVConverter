@@ -51,12 +51,13 @@
 			console.log(new_file);
 
 			// download the csv and convert it to a excel file
-			let aTag = await cvrt.Csv2Xlsx.convertCsv(file, new_file, metaData);
+			let aTag = await cvrt.Csv2Xlsx.convertCsv(file, null, metaData, 'UTF-8', updateState);
 		};
 
 	</script>
 </body>
 </html>
+
 
 
 

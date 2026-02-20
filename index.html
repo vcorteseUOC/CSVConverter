@@ -52,11 +52,22 @@
 
 			// download the csv and convert it to a excel file
 			let aTag = await cvrt.Csv2Xlsx.convertCsv(file, null, metaData, 'UTF-8', updateState);
+
+			// simple callback function to display the state to the user
+            function updateState(u) {
+                switch (u.state) {
+                    case 'download': document.getElementById('status').textContent = 'download csv...'; break;
+                    case 'fail': document.getElementById('status').textContent = 'error: ' + u.msg; break;
+                    case 'processing': document.getElementById('status').textContent = 'generating xlsx...'; break;
+                    case 'finished': document.getElementById('status').textContent = 'finished'; break;
+                }
+            }
 		};
 
 	</script>
 </body>
 </html>
+
 
 
 
